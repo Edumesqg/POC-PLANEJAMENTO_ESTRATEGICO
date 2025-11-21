@@ -233,7 +233,7 @@ export default function SwotInicialPage() {
 
           <div className="mx-auto mb-10 grid max-w-[900px] grid-cols-1 gap-4 md:grid-cols-3">
             {[
-              'Validação SWOT com IA (Luna)',
+              'Validação SWOT (requer API)',
               'Pesquisa de mercado (Jack)',
               'Plano estratégico completo (Nina)',
               'Matriz TOWS personalizada',

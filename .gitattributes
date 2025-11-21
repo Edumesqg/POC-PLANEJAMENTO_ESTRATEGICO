@@ -1,0 +1,11 @@
+# Garantir que arquivos de linha de fim sejam consistentes
+* text=auto
+
+# Arquivos binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+

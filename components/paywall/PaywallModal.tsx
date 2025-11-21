@@ -58,8 +58,8 @@ export function PaywallModal({
   const features = [
     {
       icon: Sparkles,
-      title: 'Validacao SWOT com Luna',
-      description: 'IA especializada revisa e aprofunda sua analise SWOT',
+      title: 'Validacao SWOT',
+      description: 'Revisao e aprofundamento da sua analise SWOT (requer configuracao de API)',
     },
     {
       icon: Users,

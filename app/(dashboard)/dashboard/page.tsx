@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { LunaChatSheet } from '@/components/chat/LunaChatSheet';
+// Chat Luna removido - funcionalidade de IA desabilitada
 import { AgentProgress } from '@/components/dashboard/AgentProgress';
 import { StatusCard } from '@/components/dashboard/StatusCard';
 import { DiagnosticCard } from '@/components/dashboard/DiagnosticCard';
@@ -18,7 +18,7 @@ export default function DashboardPage() {
   const [currentAgent, setCurrentAgent] = useState<CurrentAgent>(null);
   const [completedAgents, setCompletedAgents] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(0);
-  const [lunaChatOpen, setLunaChatOpen] = useState(false);
+  // Chat Luna removido
   const [swotData, setSwotData] = useState<any>(null);
   const [userName, setUserName] = useState('Eduardo');
 
@@ -129,28 +129,21 @@ export default function DashboardPage() {
                     <Bot className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>
-                    <CardTitle className="text-lg">Luna - SWOT Specialist</CardTitle>
-                    <p className="text-sm text-gray-600">Validação e refinamento</p>
+                    <CardTitle className="text-lg">Chat com IA</CardTitle>
+                    <p className="text-sm text-gray-600">Funcionalidade desabilitada</p>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="mb-4 text-sm text-gray-700">
-                  Luna irá revisar sua análise SWOT, fazer perguntas estratégicas e
-                  aprofundar cada quadrante para garantir máxima precisão.
+                  ⚠️ Funcionalidade de chat com IA desabilitada. Necessário configurar a API de IA para habilitar esta funcionalidade.
                 </p>
                 <Button
-                  onClick={() => {
-                    setLunaChatOpen(true);
-                    if (!currentAgent) {
-                      setCurrentAgent('luna');
-                      setCurrentStep(1);
-                    }
-                  }}
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600"
+                  disabled
+                  className="w-full bg-gray-400 cursor-not-allowed"
                 >
                   <MessageCircle className="mr-2 h-4 w-4" />
-                  Conversar Agora
+                  Funcionalidade Desabilitada
                 </Button>
               </CardContent>
             </Card>
@@ -183,7 +176,7 @@ export default function DashboardPage() {
         />
       </section>
 
-      <LunaChatSheet open={lunaChatOpen} onOpenChange={setLunaChatOpen} />
+      {/* Chat Luna removido - funcionalidade de IA desabilitada */}
     </div>
   );
 }

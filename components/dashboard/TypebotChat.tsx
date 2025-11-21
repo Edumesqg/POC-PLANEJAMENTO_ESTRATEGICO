@@ -41,7 +41,7 @@ export function TypebotChat({ onStateChange }: TypebotChatProps) {
     if (typeof window !== 'undefined') {
       localStorage.setItem(
         'typebotProgress',
-        JSON.stringify({ state: 'active', currentAgent: 'luna', startedAt: Date.now() })
+        JSON.stringify({ state: 'active', currentAgent: null, startedAt: Date.now() })
       );
     }
   };
@@ -54,7 +54,7 @@ export function TypebotChat({ onStateChange }: TypebotChatProps) {
         </div>
         <div>
           <h3 className="text-lg font-bold text-white">
-            Luna - Especialista em SWOT
+            Chat com IA (Desabilitado)
           </h3>
           <p className="text-sm text-white/90">
             {state === 'active' ? '🟢 Online' : 'Aguardando você...'}
@@ -78,7 +78,7 @@ export function TypebotChat({ onStateChange }: TypebotChatProps) {
               onClick={handleStartChat}
               className="h-auto rounded-xl bg-gradient-to-r from-royal-blue to-sky-blue px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
             >
-              Iniciar conversa com Luna 🚀
+              ⚠️ Funcionalidade Desabilitada
             </Button>
           </div>
         )}
@@ -99,7 +99,7 @@ export function TypebotChat({ onStateChange }: TypebotChatProps) {
                 <div className="h-10 w-10 flex-shrink-0 rounded-full bg-royal-blue" />
                 <div className="flex-1 rounded-2xl rounded-tl-none bg-slate-gray px-4 py-3">
                   <p className="text-sm text-carbon">
-                    Olá! Sou a Luna. Vou te ajudar a refinar sua análise SWOT. Vamos começar pelas suas forças: o que seu negócio faz melhor que a concorrência?
+                    ⚠️ Necessário configurar a API de IA para habilitar esta funcionalidade.
                   </p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export function TypebotChat({ onStateChange }: TypebotChatProps) {
           <div className="flex flex-col items-center text-center">
             <div className="mb-6 h-16 w-16 animate-spin rounded-full border-4 border-slate-gray border-t-royal-blue" />
             <h4 className="mb-2 text-xl font-bold text-navy-blue">
-              Luna está processando suas respostas...
+              ⚠️ Funcionalidade desabilitada
             </h4>
             <p className="text-base text-gray-600">
               Isso pode levar alguns minutos
@@ -134,7 +134,7 @@ export function TypebotChat({ onStateChange }: TypebotChatProps) {
               <span className="text-5xl">✅</span>
             </div>
             <h4 className="mb-3 text-2xl font-bold text-navy-blue">
-              Conversa com Luna completa!
+              ⚠️ Funcionalidade desabilitada
             </h4>
             <p className="mb-6 max-w-md text-base text-gray-600">
               Jack está pronto para pesquisar seu mercado
@@ -149,7 +149,7 @@ export function TypebotChat({ onStateChange }: TypebotChatProps) {
       </div>
 
       <div className="flex items-center justify-between border-t border-gray-200 px-6 py-4">
-        <p className="text-xs text-gray-500">Powered by Typebot + OpenAI</p>
+        <p className="text-xs text-gray-500">⚠️ API de IA não configurada</p>
         <a
           href="/dashboard/ajuda"
           className="text-xs font-medium text-royal-blue transition-colors hover:underline"

@@ -51,7 +51,7 @@ export function DiagnosticCard({
 
   const steps = [
     {
-      name: 'Análise SWOT validada por Luna',
+      name: 'Análise SWOT inicial',
       completed: currentStep >= 1,
       inProgress: currentStep === 1,
     },

@@ -28,7 +28,7 @@ export function LunaChatSheet({ open, onOpenChange }: LunaChatSheetProps) {
     {
       role: 'assistant',
       content:
-        'Olá! Sou a Luna, especialista em análise SWOT. Vou te ajudar a validar e aprofundar seu diagnóstico estratégico. Pronto para começar?',
+        '⚠️ Esta funcionalidade requer configuração da API de IA. Por favor, configure a API para habilitar o chat.',
       timestamp: new Date(),
     },
   ]);
@@ -79,47 +79,17 @@ export function LunaChatSheet({ open, onOpenChange }: LunaChatSheetProps) {
     setInput('');
     setIsLoading(true);
 
-    try {
-      const swotData = getSWOTDataFromLocalStorage();
+    // Simula delay de resposta
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      const response = await fetch('/api/chat/luna', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: [...messages, userMessage].map((m) => ({
-            role: m.role,
-            content: m.content,
-          })),
-          swotData: swotData,
-        }),
-      });
+    const assistantMessage: Message = {
+      role: 'assistant',
+      content: '⚠️ Necessário configurar a API de IA para habilitar esta funcionalidade.',
+      timestamp: new Date(),
+    };
 
-      if (!response.ok) {
-        throw new Error('Erro na resposta da API');
-      }
-
-      const data = await response.json();
-
-      const assistantMessage: Message = {
-        role: 'assistant',
-        content: data.message,
-        timestamp: new Date(),
-      };
-
-      setMessages((prev) => [...prev, assistantMessage]);
-    } catch (error) {
-      console.error('Erro ao enviar mensagem:', error);
-
-      const errorMessage: Message = {
-        role: 'assistant',
-        content:
-          'Desculpe, ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.',
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
+    setMessages((prev) => [...prev, assistantMessage]);
+    setIsLoading(false);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -142,10 +112,10 @@ export function LunaChatSheet({ open, onOpenChange }: LunaChatSheetProps) {
             </div>
             <div>
               <SheetTitle className="text-lg text-white">
-                Luna - SWOT Specialist
+                Chat de IA
               </SheetTitle>
               <p className="text-sm text-purple-100">
-                IA especializada em estratégia
+                Funcionalidade desabilitada
               </p>
             </div>
           </div>
