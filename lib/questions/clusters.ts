@@ -1,0 +1,336 @@
+import { Question } from '@/types/form';
+
+export const clusterQuestions: Record<string, Question[]> = {
+  alimentacao: [
+    {
+      id: 'canalVendaAlimentacao',
+      number: 14,
+      label: 'Qual o seu principal canal de venda?',
+      microcopy: 'Escolha a opção mais relevante',
+      type: 'radio',
+      options: [
+        { value: 'salao', label: 'Salão/Consumo no local' },
+        { value: 'delivery-proprio', label: 'Delivery próprio' },
+        { value: 'delivery-apps', label: 'iFood, Rappi, Uber Eats' },
+        { value: 'mix', label: 'Mix de canais' },
+      ],
+    },
+    {
+      id: 'controleDesperdicioAlimentacao',
+      number: 15,
+      label: 'Você tem controle rigoroso sobre desperdício e validade?',
+      microcopy: 'Gestão de estoque perecível',
+      type: 'radio',
+      options: [
+        { value: 'digital', label: 'Sim, controlo tudo digitalmente' },
+        { value: 'manual', label: 'Sim, controlo no papel/memória' },
+        { value: 'parcial', label: 'Mais ou menos' },
+        { value: 'nao', label: 'Não, isso é um problema' },
+      ],
+    },
+    {
+      id: 'cardapioAtualizadoAlimentacao',
+      number: 16,
+      label: 'Seu cardápio/portfólio está atualizado?',
+      microcopy: 'Revisa preços, opções e apresentação',
+      type: 'radio',
+      options: [
+        { value: 'sim', label: 'Sim, reviso frequentemente' },
+        { value: 'parcial', label: 'Mais ou menos' },
+        { value: 'nao', label: 'Não, está desatualizado' },
+      ],
+    },
+    {
+      id: 'maiorCustoAlimentacao',
+      number: 17,
+      label: 'Qual seu maior custo operacional?',
+      microcopy: 'O que mais pesa no orçamento',
+      type: 'radio',
+      options: [
+        { value: 'insumos', label: 'Matéria-prima/Insumos' },
+        { value: 'mao-obra', label: 'Mão de obra' },
+        { value: 'aluguel', label: 'Aluguel/Estrutura' },
+        { value: 'logistica', label: 'Delivery/Logística' },
+      ],
+    },
+  ],
+
+  comercio: [
+    {
+      id: 'vendaOnlineComercio',
+      number: 14,
+      label: 'Você vende online além da loja física?',
+      microcopy: 'Presença digital comercial',
+      type: 'radio',
+      options: [
+        { value: 'ecommerce', label: 'Sim, tenho e-commerce próprio' },
+        { value: 'social', label: 'Sim, vendo por WhatsApp/redes sociais' },
+        { value: 'marketplace', label: 'Sim, marketplace (Mercado Livre, etc)' },
+        { value: 'so-fisico', label: 'Não, só físico' },
+      ],
+    },
+    {
+      id: 'controleEstoqueComercio',
+      number: 15,
+      label: 'Como está seu controle de estoque?',
+      microcopy: 'Gestão de inventário',
+      type: 'radio',
+      options: [
+        { value: 'digital', label: 'Sistema digital integrado' },
+        { value: 'planilha', label: 'Planilhas' },
+        { value: 'manual', label: 'Controle manual/visual' },
+        { value: 'nao', label: 'Não tenho controle' },
+      ],
+    },
+    {
+      id: 'margemLucroComercio',
+      number: 16,
+      label: 'Você conhece bem sua margem de lucro por produto?',
+      microcopy: 'Precificação e rentabilidade',
+      type: 'radio',
+      options: [
+        { value: 'sim', label: 'Sim, sei de todos' },
+        { value: 'principais', label: 'Sei dos principais' },
+        { value: 'geral', label: 'Tenho ideia geral' },
+        { value: 'nao', label: 'Não sei bem' },
+      ],
+    },
+    {
+      id: 'desafioVarejoComercio',
+      number: 17,
+      label: 'Qual seu maior desafio no varejo?',
+      microcopy: 'Principal dificuldade operacional',
+      type: 'radio',
+      options: [
+        { value: 'giro', label: 'Giro de estoque lento' },
+        { value: 'capital', label: 'Capital parado em estoque' },
+        { value: 'sazonalidade', label: 'Sazonalidade forte' },
+        { value: 'quebra', label: 'Quebra/perda de produtos' },
+      ],
+    },
+  ],
+
+  servicos: [
+    {
+      id: 'precificacaoServicos',
+      number: 14,
+      label: 'Como você precifica seus serviços?',
+      microcopy: 'Modelo de cobrança',
+      type: 'radio',
+      options: [
+        { value: 'hora', label: 'Hora trabalhada' },
+        { value: 'projeto', label: 'Projeto/Pacote fixo' },
+        { value: 'recorrente', label: 'Mensalidade/Recorrência' },
+        { value: 'mix', label: 'Mix de modelos' },
+      ],
+    },
+    {
+      id: 'processosDocumentadosServicos',
+      number: 15,
+      label: 'Você tem processos documentados?',
+      microcopy: 'Padronização de serviços',
+      type: 'radio',
+      options: [
+        { value: 'sim', label: 'Sim, tudo documentado' },
+        { value: 'parcial', label: 'Parcialmente documentado' },
+        { value: 'mental', label: 'Só na minha cabeça' },
+        { value: 'nao', label: 'Não tenho processos claros' },
+      ],
+    },
+    {
+      id: 'tempoAlocacaoServicos',
+      number: 16,
+      label: 'Qual % do seu tempo vai para captação vs. entrega?',
+      microcopy: 'Distribuição de tempo',
+      type: 'radio',
+      options: [
+        { value: '80-20', label: '80% captação / 20% entrega' },
+        { value: '50-50', label: '50% captação / 50% entrega' },
+        { value: '20-80', label: '20% captação / 80% entrega' },
+        { value: '0-100', label: '100% entrega (clientes chegam sozinhos)' },
+      ],
+    },
+    {
+      id: 'ticketMedioServicos',
+      number: 17,
+      label: 'Seu ticket médio é adequado?',
+      microcopy: 'Valor cobrado por serviço',
+      type: 'radio',
+      options: [
+        { value: 'sim', label: 'Sim, estou satisfeito' },
+        { value: 'baixo', label: 'Poderia ser maior' },
+        { value: 'muito-baixo', label: 'Está muito baixo' },
+        { value: 'nao-sei', label: 'Não sei bem' },
+      ],
+    },
+  ],
+
+  industria: [
+    {
+      id: 'controleQualidadeIndustria',
+      number: 14,
+      label: 'Você tem controle de qualidade estruturado?',
+      microcopy: 'Inspeção e garantia de qualidade',
+      type: 'radio',
+      options: [
+        { value: 'sim', label: 'Sim, com inspeção sistematizada' },
+        { value: 'basico', label: 'Inspeção visual básica' },
+        { value: 'reativo', label: 'Só quando há reclamação' },
+        { value: 'nao', label: 'Não tenho' },
+      ],
+    },
+    {
+      id: 'nivelAutomacaoIndustria',
+      number: 15,
+      label: 'Como está seu nível de automação?',
+      microcopy: 'Tecnologia na produção',
+      type: 'radio',
+      options: [
+        { value: 'alta', label: 'Altamente automatizado' },
+        { value: 'media', label: 'Parcialmente automatizado' },
+        { value: 'baixa', label: 'Quase tudo manual' },
+        { value: 'zero', label: '100% manual' },
+      ],
+    },
+    {
+      id: 'capacidadeProdutivaIndustria',
+      number: 16,
+      label: 'Você conhece sua capacidade produtiva real?',
+      microcopy: 'Planejamento de produção',
+      type: 'radio',
+      options: [
+        { value: 'sim', label: 'Sim, mapeado e otimizado' },
+        { value: 'conheco', label: 'Conheço, mas não otimizado' },
+        { value: 'aproximado', label: 'Tenho ideia aproximada' },
+        { value: 'nao', label: 'Não sei bem' },
+      ],
+    },
+    {
+      id: 'gargaloProducaoIndustria',
+      number: 17,
+      label: 'Qual seu maior gargalo de produção?',
+      microcopy: 'Principal limitador',
+      type: 'radio',
+      options: [
+        { value: 'materia-prima', label: 'Matéria-prima/Fornecedores' },
+        { value: 'equipamentos', label: 'Equipamentos limitados' },
+        { value: 'mao-obra', label: 'Mão de obra qualificada' },
+        { value: 'espaco', label: 'Espaço físico' },
+      ],
+    },
+  ],
+
+  agro: [
+    {
+      id: 'comercializacaoAgro',
+      number: 14,
+      label: 'Como você comercializa sua produção?',
+      microcopy: 'Canal de venda principal',
+      type: 'radio',
+      options: [
+        { value: 'direto', label: 'Venda direta ao consumidor' },
+        { value: 'intermediarios', label: 'Intermediários/Atravessadores' },
+        { value: 'cooperativa', label: 'Cooperativa' },
+        { value: 'mix', label: 'Mix de canais' },
+      ],
+    },
+    {
+      id: 'tecnologiaProducaoAgro',
+      number: 15,
+      label: 'Você usa tecnologia na produção?',
+      microcopy: 'Nível de tecnificação',
+      type: 'radio',
+      options: [
+        { value: 'alta', label: 'Sim, alta tecnologia (sensores, drones, etc)' },
+        { value: 'media', label: 'Tecnologia moderada (irrigação, equipamentos)' },
+        { value: 'basica', label: 'Tecnologia básica' },
+        { value: 'tradicional', label: 'Produção tradicional' },
+      ],
+    },
+    {
+      id: 'gestaoFinanceiraAgro',
+      number: 16,
+      label: 'Como é sua gestão financeira?',
+      microcopy: 'Controle de custos e receitas',
+      type: 'radio',
+      options: [
+        { value: 'sistema', label: 'Sistema completo de gestão' },
+        { value: 'planilha', label: 'Planilhas organizadas' },
+        { value: 'basico', label: 'Controle básico' },
+        { value: 'nao', label: 'Não controlo bem' },
+      ],
+    },
+    {
+      id: 'certificacoesAgro',
+      number: 17,
+      label: 'Você tem certificações ou selos?',
+      microcopy: 'Certificações de qualidade',
+      type: 'radio',
+      options: [
+        { value: 'sim', label: 'Sim, várias certificações' },
+        { value: 'algumas', label: 'Algumas certificações' },
+        { value: 'planejando', label: 'Não, mas penso em ter' },
+        { value: 'nao', label: 'Não tenho' },
+      ],
+    },
+  ],
+
+  outro: [
+    {
+      id: 'aquisicaoClientesOutro',
+      number: 14,
+      label: 'Como você adquire clientes?',
+      microcopy: 'Descreva como você atrai novos clientes...',
+      type: 'textarea',
+      placeholder: 'Descreva como você atrai novos clientes...',
+      rows: 4,
+    },
+    {
+      id: 'diferencialOutro',
+      number: 15,
+      label: 'Qual seu principal diferencial?',
+      microcopy: 'O que te torna único no mercado?',
+      type: 'textarea',
+      placeholder: 'O que te torna único no mercado?',
+      rows: 4,
+    },
+    {
+      id: 'desafioAtualOutro',
+      number: 16,
+      label: 'Qual seu maior desafio hoje?',
+      microcopy: 'Seja específico...',
+      type: 'textarea',
+      placeholder: 'Seja específico...',
+      rows: 4,
+    },
+    {
+      id: 'melhoriaDesejadaOutro',
+      number: 17,
+      label: 'O que você gostaria de melhorar?',
+      microcopy: 'Liste melhorias que gostaria de fazer...',
+      type: 'textarea',
+      placeholder: 'Liste melhorias que gostaria de fazer...',
+      rows: 4,
+    },
+  ],
+};
+
+export const finalQuestion: Question = {
+  id: 'observacoesAdicionais',
+  number: 18,
+  label: 'Algo mais que eu deveria saber sobre seu negócio?',
+  microcopy: 'Opcional — qualquer informação extra que queira compartilhar',
+  type: 'textarea',
+  placeholder:
+    'Ex: Estou em processo de mudança de local, quero abrir franquias, tenho um sócio problemático, etc.',
+  rows: 5,
+};
+
+export const clusterNames: Record<string, string> = {
+  alimentacao: 'Alimentação',
+  comercio: 'Comércio',
+  servicos: 'Serviços',
+  industria: 'Indústria',
+  agro: 'Agronegócio',
+  outro: 'Seu Setor',
+};

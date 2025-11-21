@@ -1,0 +1,119 @@
+# MAPA DO EMPREENDEDOR - PROJECT KNOWLEDGE
+
+## Stack Obrigatória
+- Next.js 14 (App Router)
+- TypeScript (strict mode)
+- Tailwind CSS (estilização única permitida)
+- Shadcn/ui (componentes UI únicos permitidos)
+- React Hook Form + Zod (validação de formulários)
+- Lucide React (ícones únicos permitidos)
+
+## Design System - Apple-Inspired
+
+### Cores Principais
+--navy-blue: #1A1A40;      /* Headers, logo, navegação */
+--royal-blue: #0D47A1;     /* Links, hover states, CTAs principais */
+--sky-blue: #42A5F5;       /* Accents, badges, destaques */
+--emerald-green: #10B981;  /* Forças SWOT, sucesso, confirmações */
+--amber-orange: #F59E0B;   /* Oportunidades SWOT, urgência */
+--coral-red: #EF4444;      /* Fraquezas SWOT, alertas, erros */
+--slate-gray: #ECEFF1;     /* Backgrounds secundários, cards */
+--carbon: #1F2937;         /* Texto primário */
+--white: #FFFFFF;          /* Background principal */
+
+### Tipografia
+- Font Family: 'Inter' (Google Fonts)
+- H1: 48px, font-weight: 700, line-height: 1.2, letter-spacing: -0.02em
+- H2: 32px, font-weight: 600, line-height: 1.3, letter-spacing: -0.01em
+- H3: 24px, font-weight: 500, line-height: 1.4
+- Body: 16px, font-weight: 400, line-height: 1.6
+- Small: 14px, font-weight: 400, line-height: 1.5, color: #546E7A
+
+### Espaçamento
+- Usar múltiplos de 4px: 4, 8, 12, 16, 24, 32, 48, 64, 80, 96
+- Gap entre elementos: 16px ou 24px
+- Padding interno: 16px (mobile) | 24px (desktop)
+- Margin entre seções: 48px (mobile) | 80px (desktop)
+
+### Responsividade
+- Mobile: 320px - 768px (Grid: 1 coluna, H1: 32px)
+- Tablet: 768px - 1024px (Grid: 2 colunas, H1: 40px)
+- Desktop: 1024px+ (Grid: 3 colunas, H1: 48px, Container max-width: 1200px)
+
+## Regras de Desenvolvimento
+
+### DO (Faça):
+- Usar APENAS Shadcn/ui para componentes UI
+- Usar APENAS Tailwind CSS para estilização
+- Usar APENAS Lucide React para ícones
+- Componentes funcionais com TypeScript
+- Validação com React Hook Form + Zod
+- Nomenclatura: PascalCase (componentes), camelCase (funções)
+- Mobile-first sempre
+- Comentários JSDoc em funções complexas
+- Mudanças incrementais (uma feature por vez)
+
+### DON'T (Não Faça):
+- NÃO instalar pacotes de UI além do Shadcn/ui
+- NÃO usar CSS customizado (apenas Tailwind)
+- NÃO usar bibliotecas de ícones além do Lucide React
+- NÃO fazer rewrites massivos sem solicitação
+- NÃO assumir requisitos - perguntar se incerto
+
+## Estrutura de Arquivos Esperada
+
+app/
+├── (auth)/              # Rotas de autenticação
+│   ├── login/
+│   └── cadastro/
+├── (dashboard)/         # Rotas protegidas (após auth)
+│   ├── dashboard/
+│   └── diagnostico/
+├── (public)/            # Rotas públicas
+│   ├── page.tsx         # Landing page
+│   ├── boas-vindas/
+│   ├── formulario-basico/
+│   ├── formulario-personalizado/
+│   └── swot-inicial/
+└── api/                 # API Routes
+    └── generate-swot-initial/
+
+components/
+├── ui/                  # Shadcn components
+├── layout/              #оли Header, Footer, Nav
+├── forms/               # Formulários específicos
+├── swot/                # Componentes SWOT
+└── paywall/             # Modal de pagamentoдина
+
+lib/
+├── supabase/            # Cliente Supabase (preparado)
+├── utils.ts             # Utilidades gerais
+└── validations.ts       # Schemas Zod
+
+## Preparação para Integração Futura
+
+### Supabase Auth (NÃO implementar agora, apenas preparar)
+- Criar placeholder para cliente Supabase
+- Deixar rotas de auth vazias (mock)
+- Comentar "// TODO: Integrar Supabase Auth"
+
+### Formulários (Mock por enquanto)
+- Salvar dados em React state (useState)
+- NÃO enviar para API ainda
+- Comentar "// TODO: Enviar para API após pagamento"
+
+### SWOT (Mock data por enquanto)
+- Exibir dados mock/exemplo
+- Comentar "// TODO: Integrar API generate-swot-initial"
+
+### Pagamento (UI apenas)
+- Criar modal de paywall
+- Botão "Pagar R$ 50" sem ação real的名
+- Comentar "// TODO: Integrar Stripe Checkout"
+
+## Microcopy e Tom de Voz
+- Tom: Conversacional, amigável, encorajador
+- Evitar: Termos técnicos, jargões corporativos
+- Preferir: Linguagem simples, direta, acessível
+- Exemplo Bom: "Vamos começar! Me conte sobre seu negócio 🚀"
+- Exemplo Ruim: "Preencha os campos obrigatórios do formulário de cadastro empresarial"
